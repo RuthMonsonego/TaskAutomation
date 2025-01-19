@@ -42,24 +42,20 @@ The system works as follows:
 
 1. Clone the repository:
 
-   ```bash
    git clone https://github.com/yourusername/task-automation.git
    cd task-automation
    
 2. Create a virtual environment (optional but recommended):
 
-  ```bash
   python -m venv venv
   source venv/bin/activate  # On Windows: venv\Scripts\activate
 
 3. Install the required packages:
 
-  ```bash
   pip install -r requirements.txt
 
 4. Set up the Mailgun API keys in config.py:
 
-  ```bash
   MAILGUN_SETTINGS = {
     "api_key": "your-api-key",
     "domain": "your-mailgun-domain"
@@ -67,7 +63,6 @@ The system works as follows:
 
 5. Ensure you have the following directory structure:
 
-  ```bash
   /output
 
   The reports will be saved in this directory.
@@ -76,12 +71,10 @@ The system works as follows:
 
 1. Start the Flask server:
 
-  ```bash
   python app.py
 
 2. You can add tasks by making a POST request to the /add_task endpoint with the following JSON body:
 
-  ```bash
   {
     "customer_id": 1,
     "task": "Task Description",
@@ -90,7 +83,6 @@ The system works as follows:
 
   Example using curl:
 
-  ```bash
   curl -X POST -H "Content-Type: application/json" -d '{"customer_id": 1, "task": "Complete Task", "priority": 1}' http://localhost:5000/add_task
 
 3. The system will process tasks in the background, send notifications to customers when tasks are in progress or completed, and send summary reports to the administrator after every 10 tasks.
